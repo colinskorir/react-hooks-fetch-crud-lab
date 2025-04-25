@@ -20,6 +20,9 @@ test("displays question prompts after fetching", async () => {
 
   fireEvent.click(screen.queryByText(/View Questions/));
 
+  // Debugging: Log the DOM to verify the rendered output
+  console.log(screen.debug());
+
   expect(await screen.findByText(/lorem testum 1/g)).toBeInTheDocument();
   expect(await screen.findByText(/lorem testum 2/g)).toBeInTheDocument();
 });
